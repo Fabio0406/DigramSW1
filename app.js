@@ -17,7 +17,7 @@ app.use('/resources', express.static('public'));
 app.use('/resources', express.static(__dirname + '/public'));
 
 // 5 - Motor de plantillas EJS
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 app.set('view engine', 'ejs');
 
 //	Invocamos a bcrypt
