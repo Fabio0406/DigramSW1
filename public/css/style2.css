@@ -1,0 +1,171 @@
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Altura completa de la pantalla */
+}
+
+/* Contenedor de herramientas */
+.container {
+    background-color: rgb(16, 36, 168);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Centrar los botones */
+    position: fixed;
+    bottom: 0; /* Mover a la parte inferior */
+    left: 0;
+    z-index: 1000;
+}
+
+/* Botones con estilo mejorado */
+.componentes {
+    background-color: #0a1231; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.componentes:hover {
+    background-color: #0a1231; /* Efecto hover */
+}
+
+.componentes svg {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal para editar clases */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;    
+    background-color: rgba(0, 0, 0, 0.7);
+
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0% auto; /* Mayor margen superior para que el modal esté centrado */
+    padding: 15px; /* Reducimos el padding */
+    border: 1px solid #888;
+    width: 30%; /* Reducimos el ancho del modal */
+    max-width: 500px; /* Aseguramos que el ancho máximo sea de 500px */
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #aaa;
+    font-size: 24px; /* Tamaño de la "X" un poco más pequeño */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Estilos para los inputs dentro del modal */
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: 90%;
+    padding: 6px; /* Reducimos el padding de los campos */
+    margin: 5px 0 10px 0; /* Reducimos el margen inferior */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    background-color: #2a28a7;
+    color: white;
+    padding: 8px 15px; /* Botón más pequeño */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.modal-content button,a{
+    color: white;
+    padding: 8px 15px; /* Botón más pequeño */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0a1231;
+}
+
+/* Estilo para el select (desplegable) */
+select {
+    appearance: none; /* Elimina el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f0f0f0; /* Fondo claro */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 40px 10px 15px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    cursor: pointer; /* Icono de cursor para indicar interacción */
+    position: relative;
+    outline: none; /* Sin borde de enfoque por defecto */
+    transition: all 0.3s ease;
+    width: auto; /* Ajustar automáticamente */
+}
+
+/* Efecto al pasar el cursor sobre el select */
+select:hover {
+    background-color: #e6e6e6; /* Fondo más oscuro en hover */
+    border-color: #888; /* Borde más oscuro en hover */
+}
+
+/* Efecto cuando el select está en foco (cuando está desplegado) */
+select:focus {
+    border-color: #4CAF50; /* Cambia el color del borde al estar enfocado */
+}
+
+/* Agregar un icono de flecha hacia abajo para el select */
+select::after {
+    content: '\25BC'; /* Código del triángulo ▼ */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 14px;
+    color: #333;
+}
+
