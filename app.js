@@ -290,7 +290,7 @@ app.get('/download-zip', (req, res) => {
 });
 
 // 17 - Servidor y Socket.io en ejecución
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
 	console.log('Servidor y Socket.io en ejecución en http://localhost:3000');
 });
