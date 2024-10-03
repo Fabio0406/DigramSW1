@@ -40,7 +40,7 @@ router.post('/register', async (req, res)=>{
         if(error){
             console.log(error);
         }else{            
-			res.render('register', {
+			res.render('login', {
 				alert: true,
 				alertTitle: "Regitro",
 				alertMessage: "Te registraste correctamente!",
