@@ -58,7 +58,7 @@
   </div>
 
   <!-- Campos ocultos para pizarra_id y proyecto_name -->
-  <input id="objetos" type="hidden" value='<%= proyecto.objetos %>'>
+  <input id="objetos" type="hidden" value='<%= JSON.stringify(proyecto.objetos) %>'>
 
   <input id="pizarra_id" type="hidden" value="<%= pizarra_id %>">
   <input id="proyecto_name" type="hidden" value="<%= proyecto.name %>">
