@@ -34,10 +34,11 @@ router.get('/createproyecto',(req, res)=>{
 //10 - Método para REGISTRARSE
 router.post('/register', async (req, res)=>{
 	const user = req.body.user;
-	const name = req.body.name;    
+	const name = req.body.name;
+	const rol = "admin";    
 	const pass = req.body.pass;
 	let passwordHash = await bcrypt.hash(pass, 8);
-    connection.query('INSERT INTO users SET ?',{user:user, name:name, pass:passwordHash}, async (error, results)=>{
+    connection.query('INSERT INTO users SET ?',{user:user, name:name, rol:rol, pass:passwordHash}, async (error, results)=>{
         if(error){
             console.log(error);
         }else{            
