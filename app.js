@@ -52,7 +52,7 @@ app.post('/auth', async (req, res) => {
 		connection.query('SELECT * FROM users WHERE user = ?', [user], async (error, results, fields) => {
 			if (results.length == 0 || !(await bcrypt.compare(pass, results[0].pass))) {
 				if(results.length == 0){
-					res.render('login', {
+					res.render('./views/login.ejs', {
 						alert: true,
 						alertTitle: "Error",
 						alertMessage: "USUARIO es incorrecto",
@@ -62,7 +62,7 @@ app.post('/auth', async (req, res) => {
 						ruta: '/login'
 					});
 				}else{
-					res.render('login', {
+					res.render('./views/login.ejs', {
 						alert: true,
 						alertTitle: "Error",
 						alertMessage: "PASSWORD es incorrecto",
@@ -72,7 +72,7 @@ app.post('/auth', async (req, res) => {
 						ruta: '/login'
 					});
 				}
-				res.render('login', {
+				res.render('./views/login.ejs', {
 					alert: true,
 					alertTitle: "Error",
 					alertMessage: "USUARIO y/o PASSWORD incorrectas",
@@ -86,7 +86,7 @@ app.post('/auth', async (req, res) => {
 				req.session.loggedin = true;
 				req.session.name = results[0].name;
 				req.session.user_id = results[0].id;
-				res.render('login', {
+				res.render('./views/login.ejs', {
 					alert: true,
 					alertTitle: "¡Bienvenido " + results[0].name + "!",
 					alertMessage: "¡LOGIN CORRECTO!",					
@@ -127,7 +127,7 @@ app.get('/proyecto', (req, res) => {
 			if (error) {
 				res.status(500).send('Error en la consulta a la base de datos');
 			} else {
-				res.render('proyecto', {
+				res.render('./views/proyecto.ejs', {
 					login: true,
 					name: req.session.name,
 					proyect: results
