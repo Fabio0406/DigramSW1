@@ -4,6 +4,7 @@ const connection = mysql.createConnection({
     user     : process.env.DB_USER || "root",
     password : process.env.DB_PASS || "",
     database : process.env.DB_DATABASE || "sw",
+    port: process.env.PORT_DB || "3306",
 });
 
 connection.connect((error) => {
