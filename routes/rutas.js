@@ -20,9 +20,7 @@ router.get('/login', (req, res) => {
 	res.render('../views/login.ejs');
 })
 
-router.get('/register',(req, res)=>{
-		res.render('../views/register.ejs');
-})
+
 router.get('/createproyecto',(req, res)=>{
 		res.render('create',{
 			login:true,
@@ -42,7 +40,7 @@ router.post('/register', async (req, res)=>{
         if(error){
             console.log(error);
         }else{            
-			res.render('../views/register.ejs', {
+			res.render('register', {
 				alert: true,
 				alertTitle: "Regitro",
 				alertMessage: "Te registraste correctamente!",
@@ -67,7 +65,7 @@ router.post('/store', async (req, res) => {
     mProyecto.crearProyecto(nuevoProyectoDTO)
         .then((insertId) => {
             
-            res.render('../views/create.ejs', {
+            res.render('create', {
                 alert: true,
                 name: name,
                 alertTitle: "Registro Correcto",
